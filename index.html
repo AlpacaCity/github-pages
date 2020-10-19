@@ -1,0 +1,644 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Alpaca City Guide</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9fc163a3-3261-4e52-b07a-6a6af3aa0313" class="page sans"><header><img class="page-cover-image" src="Alpaca%20City%20Guide%209fc163a332614e52b07a6a6af3aa0313/Banner_copy.png" style="object-position:center 67.05%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Alpaca%20City%20Guide%209fc163a332614e52b07a6a6af3aa0313/Squared_Logo.png"/></div><h1 class="page-title">Alpaca City Guide</h1></header><div class="page-body"><p id="c4fafe97-e250-471e-be23-b91135164dd1" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e6be57a9-b81d-44d0-a3c4-656e8ff19419"><div style="font-size:1.5em"><span class="icon">🦙</span></div><div style="width:100%">Thanks for reading the Alpaca City Guide! 
+
+I&#x27;m Kalpacam, one responsible, beautiful citizen of Alpaca City. I will be your guide to our miracle land where hundreds and thousands of Alpacacinos like me are waiting for you to become their shepherds. My fluffy friends and I have prepared for this handbook which covers some of the important info you need to start your adventure here.</div></figure><p id="04bbc50a-ee59-4951-a38b-20d96f359ce3" class="">
+</p><p id="5fe16fed-c59c-488a-904d-de2b17443b73" class="">Please make sure to follow us on</p><div id="933a372a-f328-482c-b5f5-09e65a2ee430" class="column-list"><div id="b482ebb8-f721-4338-94df-5e75868bbb68" style="width:50%" class="column"><ul id="f1c018fa-84ea-49ed-b375-d0e513a95409" class="bulleted-list"><li><a href="https://alpaca.city"><mark class="highlight-pink">Alpaca City Center (</mark></a><a href="https://alpaca.city"><mark class="highlight-pink"><strong>Homepage</strong></mark></a><a href="https://alpaca.city"><mark class="highlight-pink">)</mark></a></li></ul><ul id="747983cf-326b-44c9-a5cc-37c0c5efe35c" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://discord.io/AlpacaCity">Alpaca City Hall (</a></mark><mark class="highlight-pink"><a href="https://discord.io/AlpacaCity"><strong>Discord</strong></a></mark><mark class="highlight-pink"><a href="https://discord.io/AlpacaCity">)</a></mark></li></ul><ul id="4b3ad2e9-0e49-49c8-abf2-9531bc716288" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://twitter.com/CityAlpaca">Alpa Local Radio (</a></mark><mark class="highlight-pink"><a href="https://twitter.com/CityAlpaca"><strong>Twitter</strong></a></mark><mark class="highlight-pink"><a href="https://twitter.com/CityAlpaca">)</a></mark></li></ul><ul id="8afb9231-28f2-4893-bb3f-82a83a87acce" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://t.me/AlpacaCity">Community Center (</a></mark><mark class="highlight-pink"><a href="https://t.me/AlpacaCity"><strong>Telegram</strong></a></mark><mark class="highlight-pink"><a href="https://t.me/AlpacaCity">)</a></mark></li></ul></div><div id="472d837a-62d9-49cf-bd34-c12c2e12d9c1" style="width:50%" class="column"><ul id="1905667f-09b6-4be9-9450-f502b148ceab" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://medium.com/AlpacaCity">Bulletin Board (</a></mark><mark class="highlight-pink"><a href="https://medium.com/AlpacaCity"><strong>Medium</strong></a></mark><mark class="highlight-pink"><a href="https://medium.com/AlpacaCity">)</a></mark></li></ul><ul id="ae760551-c4e6-4d3f-9b2e-3a06ca7c3049" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://instagram.com/CityAlpaca">Alpaca Gallery (</a></mark><mark class="highlight-pink"><a href="https://instagram.com/CityAlpaca"><strong>Instagram</strong></a></mark><mark class="highlight-pink"><a href="https://instagram.com/CityAlpaca">)</a></mark></li></ul><ul id="4ab5d59e-4def-41c1-9fc8-4bffaeabf323" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://alpaca.substack.com/">Alpaca City Digest (</a></mark><mark class="highlight-pink"><a href="https://alpaca.substack.com/"><strong>Newsletter</strong></a></mark><mark class="highlight-pink"><a href="https://alpaca.substack.com/">)</a></mark></li></ul><ul id="fa199368-5f74-4348-93aa-a667f73fc5b9" class="bulleted-list"><li><mark class="highlight-pink"><a href="https://github.com/AlpacaCity">The Alpaca Public Library (</a></mark><mark class="highlight-pink"><a href="https://github.com/AlpacaCity"><strong>Github</strong></a></mark><mark class="highlight-pink"><a href="https://github.com/AlpacaCity">)</a></mark></li></ul></div></div><p id="d8e0c53b-da22-47dd-8f91-e7f2e0b52532" class="">
+</p><nav id="b20fc207-a48a-4764-9d09-d79d3e84dd62" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4ad3f645-890b-4bef-9255-b0e4ae0031b1">🧬 The Mysterious Alpaca Gene </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fe8d18c6-0a4e-4d5e-a8e7-c2b928154a3b">⚡ Energy is important </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c27ac3a9-4085-4a9d-bf82-1bba51deedb6">👼 Breeding Rules </a></div></nav><p id="76c0dcc8-83d6-45c0-a4cb-cc83b97df5f2" class="">
+</p><p id="7211e3e4-00e6-4d41-abea-eee0169e14d2" class="">
+</p><figure class="block-color-pink_background callout" style="white-space:pre-wrap;display:flex" id="481624df-52c3-4553-9c4d-34954e83600a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Introduction</strong>
+
+Alpaca City is a virtual world built on Ethereum blockchain where users can manage their on-chain assets through collecting and breeding adorable Alpacas. Every Alpaca has varies genetic traits which not only make it unique, but also signifies its ability to generate yields.
+
+Alpaca City is endeavoring to create a more accessible DeFi ecosystem by combining the power of yield farming and NFT.  With relatively low barrier of entry, the city aims to gamifying yield farming so the amount of asset is not the only determinant of the yield.</div></figure><p id="1fef9005-d839-4bcb-a726-333dd342620a" class="">
+</p><p id="afdbd7c4-b868-4b28-a003-0c234a3db2fa" class="">
+</p><h1 id="4ad3f645-890b-4bef-9255-b0e4ae0031b1" class="">🧬 The Mysterious Alpaca Gene </h1><hr id="a79315f9-d728-4989-9a3b-95e8ba79d92f"/><p id="4e038b6a-308e-4acb-b889-b49e3e1b0df0" class="">Alpacacinos‘ genes are fascinating. They determine the various traits Alpacacinos have and make every one of them unique. </p><ul id="94f7b6cb-ef6f-4d21-9ef8-a926c810522f" class="bulleted-list"><li>Each Alpacacino has 12 different traits group. </li></ul><ul id="1ef70bd3-8e39-4ac1-a3a4-6e396b30afe7" class="bulleted-list"><li>10 of the 12 traits are discoverable and are directly linked to our appearances and energy level, while the other 2 remain undiscovered and thus unknown to us. </li></ul><ul id="8e5b9c97-8c7d-458e-967c-51b7bdc68bb1" class="bulleted-list"><li>Among the 10 discoverable traits, each carries 4 genes and only the dominant one will determine the appearance and energy level. </li></ul><ul id="c08e4968-ee08-4cdc-b9f8-871abd8c8ed0" class="bulleted-list"><li>However, the 3 secret genes could be passed on to their babies when you breed them. So don&#x27;t be surprised when you find the babies look different from their parents! 😉</li></ul><p id="134ed410-8ee2-45dd-905a-57143461d7e7" class="">
+</p><h1 id="fe8d18c6-0a4e-4d5e-a8e7-c2b928154a3b" class="">⚡ Energy is important </h1><hr id="7bfe191d-54bb-4577-8973-9e6137e91894"/><p id="2947d8f8-3b81-4873-a0e4-6fca76b4d6a2" class="">Energy is very important. </p><ul id="b727a6e8-6727-4a3b-aa5c-9e0204192434" class="bulleted-list"><li>Every single Alpacacino was born with a different level of energy which is the sum of the energy of the 10 discoverable traits. </li></ul><ul id="df494224-f785-48d7-b626-50b54a3e8e97" class="bulleted-list"><li>Each of these 10 traits, depending on the dominant gene, has an energy level of 1/ 5/ 10 or, in some rare cases, 15. </li></ul><ul id="e32640c3-4e7b-4bad-bda9-a5bbef1f7efd" class="bulleted-list"><li>The energy level Is a sign of how much yield one Alpacacino can generate when you let them manage your assets. Higher the energy level, the higher the yield.</li></ul><p id="e90779e3-884b-4484-a23f-7db3df2dc648" class="">
+</p><h1 id="c27ac3a9-4085-4a9d-bf82-1bba51deedb6" class="">👼 Breeding Rules </h1><hr id="ddb3ae8f-5673-4d0a-8adc-1ea3217b342d"/><p id="5b4e555d-7f35-4f51-9ddd-e29b95a09db7" class="">Breeding is the key to grow the yield of your assets. Since Alpacacinos are a genderless, there is no gender limitation to the breeding process. However, the only rule is that each Alpacacino cannot breed new-borns with their parents or kids.</p><p id="9f5f255a-5537-40d2-89c0-24b725e32c82" class="">Alpacacinos also have different generations. </p><ul id="2dcdd08c-173f-4265-bd81-8dfb45342361" class="bulleted-list"><li>Every Alpacacino has a GN (Generation Number) which determines the breeding fees and energy levels. </li></ul><ul id="0fae9be6-ae69-4a24-a80b-cdfce2495459" class="bulleted-list"><li>In general, Alpacacinos with higher GN will have higher breeding fees and higher energy levels. </li></ul><ul id="07ad227d-163c-4138-a82a-921d37eeee29" class="bulleted-list"><li>Our GN starts at 0 and Alpacacinos can breed across generations. </li></ul><ul id="3fe942bf-3153-4247-ad55-43153fb69a16" class="bulleted-list"><li>The baby&#x27;s GN will be the minimum GN of either of the parents plus one. For instance, if mummy alpaca has a GN of 6 and daddy alpa has a GN of 3, the baby alpa&#x27;s GN will be 3+1=4.</li></ul><p id="4837d722-0ab5-444a-9f3c-128a8d65fc78" class="">
+</p><p id="acfad582-53cf-4fb7-82f6-918272c4e284" class="">
+</p></div></article></body></html>
