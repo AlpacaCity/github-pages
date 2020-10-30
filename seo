@@ -1,4 +1,6 @@
-  <!-- Primary Meta Tags -->
+  
+  	<!-- EN -->
+	<!-- Primary Meta Tags -->
 	<title>Alpaca City Guide - The Official Guide for Alpaca City</title>
 	<link rel="icon" href="https://alpaca.city/favicon.ico" type="image/x-icon">
 	<meta name="title" content="Alpaca City Guide - The Official Guide for Alpaca City">
@@ -18,3 +20,27 @@
 	<meta property="twitter:description" content="A miracle city where DeFi meets Alpaca NFTs. Alpaca City is endeavoring to create a more accessible DeFi ecosystem by combining the power of yield farming and NFT.">
 	<meta name="twitter:site" content="@CityAlpaca" />
 	<meta property="twitter:image" content="https://guide.alpaca.city/i/4-alpacas.png">
+	
+	
+	<!-- CN -->
+  	<!-- Primary Meta Tags -->
+	<title>羊驼之城 - 官方城市指南</title>
+	<link rel="icon" href="https://alpaca.city/favicon.ico" type="image/x-icon">
+	<meta name="title" content="羊驼之城 - 官方城市指南">
+	<meta name="description" content="让DeFi遇见羊驼NFT的奇迹之城 - 羊驼之城通过结合收益耕作与NFT为公民们提供一个开放的去中心化金融平台">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://guide.alpaca.city/">
+	<meta property="og:title" content="羊驼之城 - 官方城市指南">
+	<meta property="og:description" content="让DeFi遇见羊驼NFT的奇迹之城 - 羊驼之城通过结合收益耕作与NFT为公民们提供一个开放的去中心化金融平台">
+	<meta property="og:image" content="https://guide.alpaca.city/i/4-alpacas.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://guide.alpaca.city/">
+	<meta property="twitter:title" content="羊驼之城 - 官方城市指南">
+	<meta property="twitter:description" content="让DeFi遇见羊驼NFT的奇迹之城 - 羊驼之城通过结合收益耕作与NFT为公民们提供一个开放的去中心化金融平台">
+	<meta name="twitter:site" content="@CityAlpaca" />
+	<meta property="twitter:image" content="https://guide.alpaca.city/i/4-alpacas.png">
+
